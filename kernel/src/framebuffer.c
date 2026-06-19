@@ -54,6 +54,22 @@ static void scroll_up(void){
     cursor_y -= FONT_H;
 }
 
+void kprint_hex(uint64_t value){
+    char buf[19];           // "0x" + 16 hex digits + '\0'
+    const char *digits = "0123456789abcdef";
+
+    buf[0] = '0';
+    buf[1] = 'x';
+    for (int i = 0; i < 16; i++){
+        // fill from the least-significant nibble backwards
+        buf[17 - i] = digits[value & 0xF];
+        value >>= 4;
+    }
+    buf[18] = '\0';
+
+    kprint(buf);
+}
+
 void kprint(const char *str){
     while (*str){
         char c = *str++;
