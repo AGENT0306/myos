@@ -65,7 +65,7 @@ void kprint_hex(uint64_t value){
         buf[17 - i] = digits[value & 0xF];
         value >>= 4;
     }
-    buf[18] = '\0';
+    buf[18] = '\n';
 
     kprint(buf);
 }
