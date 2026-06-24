@@ -70,6 +70,18 @@ void kprint_hex(uint64_t value){
     kprint(buf);
 }
 
+void kprint_num(uint64_t value){
+    char buf[65];
+    const char *digits = "0123456789";
+
+    for (int i = 0; i < 64; i++){
+        buf[63 - i] = digits[value % 10];
+        value /= 10;
+    }
+    buf[64] = '\n';
+    kprint(buf);
+}
+
 void kprint(const char *str){
     while (*str){
         char c = *str++;

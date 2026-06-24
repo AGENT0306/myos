@@ -1,13 +1,13 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
-#include <limine.h>
-#include <memory.h>
-#include <framebuffer.h>
+#include "limine.h"
+#include "memory.h"
+#include "framebuffer.h"
 #include "pmm.h"
 
 // Set the base revision to 6, this is recommended as this is the latest
-// base revision described by the Limine boot protocol specifcation.
+// base revision described by the Limine boot protocol specification.
 
 __attribute__((used, section(".limine_requests")))
 static volatile uint64_t limine_base_revision[] =
