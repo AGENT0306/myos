@@ -7,27 +7,31 @@
 #include "framebuffer.h"
 #include "memory.h"
 
-static uint8_t *bitmap;
-static uint64_t bitmap_frames;
-static uint64_t bitmap_size;
-static uint64_t hhdm_offset;
-static uint64_t free_frames;
-static uint64_t total_frames;
+typedef struct pmm{
+    uint8_t* bitmap;
+    uint64_t bitmap_frames;
+    uint64_t bitmap_size;
+    uint64_t free_frames;
+    uint64_t hhdm_offset;
+    uint64_t last_frame_index;
+} pmm_t;
+
+pmm_t pmm;
 
 static void bitmap_clear(uint64_t frame){
-    if ((bitmap[frame / 8] & (1 << (frame % 8))) != 0)
+    if ((pmm.bitmap[frame / 8] & (1 << (frame % 8))) != 0)
     {
-        bitmap[frame / 8] &= ~(1 << (frame % 8));
-        free_frames++;
+        pmm.bitmap[frame / 8] &= ~(1 << (frame % 8));
+        pmm.free_frames++;
     }
 }
 
 static void bitmap_set(uint64_t frame)
 {
-    if ((bitmap[frame / 8] & (1 << (frame % 8))) == 0)
+    if ((pmm.bitmap[frame / 8] & (1 << (frame % 8))) == 0)
     {
-        bitmap[frame / 8] |= (1 << (frame % 8));
-        free_frames--;
+        pmm.bitmap[frame / 8] |= (1 << (frame % 8));
+        pmm.free_frames--;
     }
 }
 
@@ -35,7 +39,7 @@ void pmm_init(volatile struct limine_memmap_request *memmap_request, volatile st
 
     struct limine_memmap_response *memmap_response = memmap_request->response;
 
-    hhdm_offset = hhdm_request->response->offset;
+    pmm.hhdm_offset = hhdm_request->response->offset;
 
     uint64_t top = 0;
 
@@ -53,14 +57,14 @@ void pmm_init(volatile struct limine_memmap_request *memmap_request, volatile st
 
     // Determine bitmap paras from given the highest address
     uint64_t bitmapAddr = 0;
-    bitmap_frames = top / 4096;
-    bitmap_size = (bitmap_frames + 7) / 8;
+    pmm.bitmap_frames = top / 4096;
+    pmm.bitmap_size = (pmm.bitmap_frames + 7) / 8;
 
     // Loop through entries again to find first entry large enough to store bitmap
     for (uint64_t i = 0; i < memmap_response->entry_count; i++) {
         uint64_t ebase = memmap_response->entries[i]->base;
 
-        if (memmap_response->entries[i]->type == LIMINE_MEMMAP_USABLE && memmap_response->entries[i]->length >= bitmap_size) {
+        if (memmap_response->entries[i]->type == LIMINE_MEMMAP_USABLE && memmap_response->entries[i]->length >= pmm.bitmap_size) {
                 bitmapAddr = ebase;
                 break;
         }
@@ -74,8 +78,8 @@ void pmm_init(volatile struct limine_memmap_request *memmap_request, volatile st
 
     }
 
-    bitmap = (uint8_t *)(bitmapAddr + hhdm_offset);
-    memset(bitmap, 0xFF, bitmap_size);
+    pmm.bitmap = (uint8_t *)(bitmapAddr + pmm.hhdm_offset);
+    memset(pmm.bitmap, 0xFF, pmm.bitmap_size);
 
     kprint("Bitmap memory set!\n");
 
@@ -93,20 +97,32 @@ void pmm_init(volatile struct limine_memmap_request *memmap_request, volatile st
         uint64_t end_frame = (ebase + elength) / 4096;
 
         for (uint64_t j = start_frame; j < end_frame; j++){
-            total_frames++;
             bitmap_clear(j);
         }
     }
 
     uint64_t bitmap_str_frame = bitmapAddr / 4096;
-    uint64_t bitmap_end_frame = (bitmapAddr + bitmap_size + 4095) / 4096;
+    uint64_t bitmap_end_frame = (bitmapAddr + pmm.bitmap_size + 4095) / 4096;
 
     for (uint64_t j = bitmap_str_frame; j < bitmap_end_frame; j++){
         bitmap_set(j);
     }
 
-    uint64_t usable_memory_maybe_idk = free_frames * 4096 / 1024 / 1024;
+    uint64_t usable_memory_maybe_idk = pmm.free_frames * 4096 / 1024 / 1024;
 
     kprint_num(usable_memory_maybe_idk);
 
+    kprint_num(pmm.bitmap_frames);
+
+}
+
+uint64_t pmm_alloc(void){
+    for (uint64_t i = 0; i < pmm.bitmap_frames; i++){
+        if ((pmm.bitmap[i / 8] & (1U << (i % 8))) == 0){
+            bitmap_set(i);
+            return (i * 4096);
+        }
+    }
+    kprint("ERROR!!! NO FRAME AVAILABLE FOR ALLOCATION!");
+    return 0;
 }
