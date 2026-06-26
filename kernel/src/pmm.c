@@ -126,3 +126,15 @@ uint64_t pmm_alloc(void){
     kprint("ERROR!!! NO FRAME AVAILABLE FOR ALLOCATION!");
     return 0;
 }
+
+void pmm_free(uint64_t addr){
+    uint64_t frame = addr / 4096;
+    if (frame >= pmm.bitmap_frames || (addr % 4096) != 0){
+        kprint("ERROR!!! GIVEN ADDRESS IS INVALID! OUT OF BOUNDS OR NOT PAGE-ALIGNED!");
+        return;
+    }
+    bitmap_clear(frame);
+    kprint("Freeing memory frame: ");
+    kprint_num(frame);
+    kprint("\n");
+}
