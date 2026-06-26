@@ -7,16 +7,10 @@
     <generated />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b59c1cb9-c056-494e-8fc5-667f9098a4a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/kernel/src/vmm.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kernel/src/vmm.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/bin/myos" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/bin/myos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/obj/src/font8x8_basic.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/font8x8_basic.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/obj/src/framebuffer.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/framebuffer.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/obj/src/main.c.d" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/main.c.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/obj/src/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/main.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/obj/src/memory.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/memory.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template.iso" beforeDir="false" />
+    <list default="true" id="b59c1cb9-c056-494e-8fc5-667f9098a4a7" name="Changes" comment="cleaning up repo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/src/vmm.h" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/src/vmm.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myos.iso" beforeDir="false" afterPath="$PROJECT_DIR$/myos.iso" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,27 +87,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Makefile Target.all.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.RadMigrateCodeStyle": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "//wsl.localhost/Ubuntu/home/rei_trebicka/Projects/myos",
-    "org.rust.first.attach.projects": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Makefile Target.all.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/home/rei_trebicka/Projects/myos&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
@@ -140,11 +134,41 @@
       <option name="presentableId" value="Default" />
       <updated>1782496122667</updated>
       <workItem from="1782496123923" duration="262000" />
-      <workItem from="1782496387202" duration="117000" />
+      <workItem from="1782496387202" duration="1114000" />
     </task>
+    <task id="LOCAL-00001" summary="added vmm files as well as update obj files">
+      <option name="closed" value="true" />
+      <created>1782496595032</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1782496595032</updated>
+    </task>
+    <task id="LOCAL-00002" summary="cleaning up repo">
+      <option name="closed" value="true" />
+      <created>1782496652709</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1782496652709</updated>
+    </task>
+    <task id="LOCAL-00003" summary="cleaning up repo">
+      <option name="closed" value="true" />
+      <created>1782496662782</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1782496662782</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added vmm files as well as update obj files" />
+    <MESSAGE value="cleaning up repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning up repo" />
   </component>
 </project>

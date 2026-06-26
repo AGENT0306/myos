@@ -7,8 +7,7 @@
 
 #include <stdint.h>
 
-typedef struct addr_space
-{
+typedef struct addr_space{
     uint64_t pml4;
 }addr_space_t;
 
