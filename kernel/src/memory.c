@@ -29,7 +29,7 @@ void *memmove(void *dest, const void *src, size_t n){
     uint8_t *psrc = src;
 
     if((uintptr_t)src > (uintptr_t) dest){
-        for(size_t i = 0; i < n; n++){
+        for(size_t i = 0; i < n; i++){
             pdest[i] = psrc[i];
         }
     }else if((uintptr_t)src < (uintptr_t)dest){
@@ -45,7 +45,7 @@ int memcmp(const void *s1, const void *s2, size_t n){
     const uint8_t *p1 = s1;
     const uint8_t *p2 = s2;
 
-    for(size_t i = 0; i < n; n++){
+    for(size_t i = 0; i < n; i++){
         if(p1[i] != p2[i]){
             return p1[i] < p2[i] ? -1 : 1;
         }
