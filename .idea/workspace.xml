@@ -14,10 +14,15 @@
   <component name="CMakeRunConfigurationManager">
     <generated />
   </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b59c1cb9-c056-494e-8fc5-667f9098a4a7" name="Changes" comment="commit fix">
+      <change afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compile_commands.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel/bin/myos" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/bin/myos" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel/obj/src/font8x8_basic.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/font8x8_basic.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel/obj/src/framebuffer.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/framebuffer.c.o" afterDir="false" />
@@ -25,6 +30,9 @@
       <change beforePath="$PROJECT_DIR$/kernel/obj/src/memory.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/memory.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel/obj/src/pmm.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/pmm.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel/obj/src/vmm.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/vmm.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/src/framebuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/src/framebuffer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/src/vmm.c" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/src/vmm.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/src/vmm.h" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/src/vmm.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myos.iso" beforeDir="false" afterPath="$PROJECT_DIR$/myos.iso" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +70,11 @@
       </map>
     </option>
   </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_//wsl.localhost/Ubuntu/home/agent/Projects/myos" value="3FgUI50a6Lzvbla1NNYGMoBh4jL" />
+    </persistenceIdMap>
+  </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -77,14 +90,77 @@
     &quot;assignee&quot;: &quot;AGENT0306&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/AGENT0306/myos&quot;,
-    &quot;accountId&quot;: &quot;5ed952b0-ddee-4fba-b243-23075240131d&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/AGENT0306/myos",
+    "accountId": "e46f5c96-9f0b-43f9-a7f1-b656a61cee25"
   }
-}</component>
+}]]></component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="N9RJDJhk" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000000366096349" />
+      <entry key="S5" value="1.002264667068226" />
+      <entry key="S10" value="1.111840077976777" />
+      <entry key="S30" value="4.112115963488248" />
+      <entry key="S60" value="11.125839144772321" />
+      <entry key="M2" value="21.939393751010805" />
+      <entry key="M5" value="40.56766078257049" />
+      <entry key="M10" value="58.26460458462508" />
+      <entry key="M15" value="69.30100862821567" />
+      <entry key="M30" value="86.38050048866108" />
+      <entry key="H1" value="98.72096543289767" />
+      <entry key="H2" value="106.27823342499704" />
+      <entry key="H4" value="110.4803128330766" />
+      <entry key="D1" value="114.22343023703512" />
+      <entry key="W1" value="114.88847426784966" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="8.848040831893005E-148" />
+      <entry key="MS500" value="3.884812247408498E-30" />
+      <entry key="S2" value="4.592722325299274E-8" />
+      <entry key="S5" value="0.0014676448626900955" />
+      <entry key="S10" value="0.05747816845581511" />
+      <entry key="S30" value="0.9328398280691053" />
+      <entry key="S60" value="2.098180747590728" />
+      <entry key="M2" value="3.400444301736722" />
+      <entry key="M5" value="6.353790823891676" />
+      <entry key="M10" value="9.960136060936419" />
+      <entry key="M15" value="12.081312227671647" />
+      <entry key="M30" value="14.986960227124188" />
+      <entry key="H1" value="16.83006082762124" />
+      <entry key="H2" value="17.87054005629515" />
+      <entry key="H4" value="18.423656495405673" />
+      <entry key="D1" value="18.902286267744028" />
+      <entry key="W1" value="18.9859997486813" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.0010911007207736521" />
+      <entry key="MS500" value="0.2556071326524806" />
+      <entry key="S2" value="0.7110387509694743" />
+      <entry key="S5" value="0.8755127467606698" />
+      <entry key="S10" value="1.0877638194487091" />
+      <entry key="S30" value="4.9186145844899185" />
+      <entry key="S60" value="13.074304710893461" />
+      <entry key="M2" value="25.207999339424322" />
+      <entry key="M5" value="46.824748845598585" />
+      <entry key="M10" value="68.14558839939544" />
+      <entry key="M15" value="81.31392630501513" />
+      <entry key="M30" value="101.3199901401853" />
+      <entry key="H1" value="115.52225151500275" />
+      <entry key="H2" value="124.13281502027581" />
+      <entry key="H4" value="128.89555020990122" />
+      <entry key="D1" value="133.12424777159146" />
+      <entry key="W1" value="133.87426253091758" />
+    </decayedShown>
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -107,6 +183,7 @@
   "keyToString": {
     "Makefile Target.all.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -118,9 +195,14 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
     "git-widget-placeholder": "main",
     "git.auto.fetch.suggestion.counter": "1",
-    "last_opened_file_path": "/home/reit/Projects/myos/compile_commands.json",
+    "last_opened_file_path": "//wsl.localhost/Ubuntu/home/agent/Projects/myos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "org.rust.first.attach.projects": "true",
     "settings.editor.selected.configurable": "CPPToolchains",
@@ -128,9 +210,9 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="all" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
@@ -162,6 +244,7 @@
       <workItem from="1782496387202" duration="1519000" />
       <workItem from="1782667907105" duration="1755000" />
       <workItem from="1782671088321" duration="378000" />
+      <workItem from="1783110519131" duration="4462000" />
     </task>
     <task id="LOCAL-00001" summary="added vmm files as well as update obj files">
       <option name="closed" value="true" />
