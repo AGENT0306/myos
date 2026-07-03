@@ -27,3 +27,17 @@ treeidx_t find_levels(uint64_t va) {
 
     return levels;
 }
+
+void map_page(uint64_t frame, addr_space_t aspc, uint64_t vaddr, uint16_t flags) {
+    treeidx_t treelvls = find_levels(vaddr);
+
+    uint64_t pdpt_addr = aspc.pml4[treelvls.pml4i];
+    if (pdpt_addr == 0) {
+        kprint("PLM4 entry doesn't store a PDPT addr\n");
+        kprint("Storing now...");
+        pdpt_addr = pmm_alloc();
+        memset((uint64_t*)(pdpt_addr + hhdm_off), 0, 4096);
+        aspc.pml4[treelvls.pml4i] = pdpt_addr;
+    }
+    uint64_t *pdpt = (uint64_t *)(pdpt_addr + hhdm_off);
+}

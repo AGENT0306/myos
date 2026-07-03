@@ -20,20 +20,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b59c1cb9-c056-494e-8fc5-667f9098a4a7" name="Changes" comment="commit fix">
+    <list default="true" id="b59c1cb9-c056-494e-8fc5-667f9098a4a7" name="Changes" comment="added page tree index finding as well as created the treeidx type in vmm.h">
       <change afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/bin/myos" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/bin/myos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/obj/src/font8x8_basic.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/font8x8_basic.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/obj/src/framebuffer.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/framebuffer.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/obj/src/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/main.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/obj/src/memory.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/memory.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/obj/src/pmm.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/pmm.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/obj/src/vmm.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/vmm.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/src/framebuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/src/framebuffer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel/src/vmm.c" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/src/vmm.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel/src/vmm.h" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/src/vmm.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myos.iso" beforeDir="false" afterPath="$PROJECT_DIR$/myos.iso" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,60 +97,60 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000000366096349" />
-      <entry key="S5" value="1.002264667068226" />
-      <entry key="S10" value="1.111840077976777" />
-      <entry key="S30" value="4.112115963488248" />
-      <entry key="S60" value="11.125839144772321" />
-      <entry key="M2" value="21.939393751010805" />
-      <entry key="M5" value="40.56766078257049" />
-      <entry key="M10" value="58.26460458462508" />
-      <entry key="M15" value="69.30100862821567" />
-      <entry key="M30" value="86.38050048866108" />
-      <entry key="H1" value="98.72096543289767" />
-      <entry key="H2" value="106.27823342499704" />
-      <entry key="H4" value="110.4803128330766" />
-      <entry key="D1" value="114.22343023703512" />
-      <entry key="W1" value="114.88847426784966" />
+      <entry key="MS500" value="1.0000000000000107" />
+      <entry key="S2" value="1.0007068592339652" />
+      <entry key="S5" value="1.1108002937745607" />
+      <entry key="S10" value="1.848360024275765" />
+      <entry key="S30" value="7.804588403306975" />
+      <entry key="S60" value="14.402128071774568" />
+      <entry key="M2" value="21.491102619747533" />
+      <entry key="M5" value="40.6390879331921" />
+      <entry key="M10" value="75.15834048793907" />
+      <entry key="M15" value="104.67716403764558" />
+      <entry key="M30" value="161.73812081850437" />
+      <entry key="H1" value="211.45207542598783" />
+      <entry key="H2" value="245.42763707527232" />
+      <entry key="H4" value="265.4873516246819" />
+      <entry key="D1" value="284.0626402982149" />
+      <entry key="W1" value="287.4327733756052" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="8.848040831893005E-148" />
-      <entry key="MS500" value="3.884812247408498E-30" />
-      <entry key="S2" value="4.592722325299274E-8" />
-      <entry key="S5" value="0.0014676448626900955" />
-      <entry key="S10" value="0.05747816845581511" />
-      <entry key="S30" value="0.9328398280691053" />
-      <entry key="S60" value="2.098180747590728" />
-      <entry key="M2" value="3.400444301736722" />
-      <entry key="M5" value="6.353790823891676" />
-      <entry key="M10" value="9.960136060936419" />
-      <entry key="M15" value="12.081312227671647" />
-      <entry key="M30" value="14.986960227124188" />
-      <entry key="H1" value="16.83006082762124" />
-      <entry key="H2" value="17.87054005629515" />
-      <entry key="H4" value="18.423656495405673" />
-      <entry key="D1" value="18.902286267744028" />
-      <entry key="W1" value="18.9859997486813" />
+      <entry key="MS100" value="2.7080497864833036E-66" />
+      <entry key="MS500" value="7.700719933639948E-14" />
+      <entry key="S2" value="5.267843111851028E-4" />
+      <entry key="S5" value="0.048826223289771896" />
+      <entry key="S10" value="0.22096656600227724" />
+      <entry key="S30" value="0.6047204262121851" />
+      <entry key="S60" value="0.7970794937665387" />
+      <entry key="M2" value="1.154268440682373" />
+      <entry key="M5" value="2.7113075352888565" />
+      <entry key="M10" value="5.583010852337732" />
+      <entry key="M15" value="8.383661087163025" />
+      <entry key="M30" value="14.449063400341075" />
+      <entry key="H1" value="20.090670572056194" />
+      <entry key="H2" value="24.028850801321294" />
+      <entry key="H4" value="26.368526367133782" />
+      <entry key="D1" value="28.539547200084698" />
+      <entry key="W1" value="28.933662958489514" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.0010911007207736521" />
-      <entry key="MS500" value="0.2556071326524806" />
-      <entry key="S2" value="0.7110387509694743" />
-      <entry key="S5" value="0.8755127467606698" />
-      <entry key="S10" value="1.0877638194487091" />
-      <entry key="S30" value="4.9186145844899185" />
-      <entry key="S60" value="13.074304710893461" />
-      <entry key="M2" value="25.207999339424322" />
-      <entry key="M5" value="46.824748845598585" />
-      <entry key="M10" value="68.14558839939544" />
-      <entry key="M15" value="81.31392630501513" />
-      <entry key="M30" value="101.3199901401853" />
-      <entry key="H1" value="115.52225151500275" />
-      <entry key="H2" value="124.13281502027581" />
-      <entry key="H4" value="128.89555020990122" />
-      <entry key="D1" value="133.12424777159146" />
-      <entry key="W1" value="133.87426253091758" />
+      <entry key="MS100" value="3.268644245512267E-46" />
+      <entry key="MS500" value="7.996182742995825E-10" />
+      <entry key="S2" value="0.006288016068222401" />
+      <entry key="S5" value="0.27063331916886973" />
+      <entry key="S10" value="1.3882617604022258" />
+      <entry key="S30" value="8.064518956990101" />
+      <entry key="S60" value="14.99242715048615" />
+      <entry key="M2" value="22.51646337791735" />
+      <entry key="M5" value="43.25549936047759" />
+      <entry key="M10" value="80.65791835895143" />
+      <entry key="M15" value="112.98420395177003" />
+      <entry key="M30" value="176.12611056089156" />
+      <entry key="H1" value="231.501002702082" />
+      <entry key="H2" value="269.4314992772253" />
+      <entry key="H4" value="291.84212144733044" />
+      <entry key="D1" value="312.5996952894521" />
+      <entry key="W1" value="316.36607507040475" />
     </decayedShown>
   </component>
   <component name="ProjectApplicationVersion">
@@ -244,7 +235,7 @@
       <workItem from="1782496387202" duration="1519000" />
       <workItem from="1782667907105" duration="1755000" />
       <workItem from="1782671088321" duration="378000" />
-      <workItem from="1783110519131" duration="4462000" />
+      <workItem from="1783110519131" duration="6330000" />
     </task>
     <task id="LOCAL-00001" summary="added vmm files as well as update obj files">
       <option name="closed" value="true" />
@@ -302,7 +293,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782497820808</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added page tree index finding as well as created the treeidx type in vmm.h">
+      <option name="closed" value="true" />
+      <created>1783115127944</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1783115127945</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +312,7 @@
     <MESSAGE value="cleaning up repo" />
     <MESSAGE value="added LICENSE" />
     <MESSAGE value="updated .idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated .idea" />
+    <MESSAGE value="added page tree index finding as well as created the treeidx type in vmm.h" />
+    <option name="LAST_COMMIT_MESSAGE" value="added page tree index finding as well as created the treeidx type in vmm.h" />
   </component>
 </project>
