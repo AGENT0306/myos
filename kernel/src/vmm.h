@@ -22,7 +22,7 @@ typedef struct treeidx {
 }treeidx_t;
 
 void vmm_init(uint64_t hhdm_offset);
-void map_page(uint64_t frame, addr_space_t pml4, uint64_t vaddr, uint16_t flags);
+void map_page(uint64_t frame, addr_space_t pml4, uint64_t vaddr, uint64_t flags);
 void unmap_page(uint64_t pml4, uint64_t vaddr);
 
 #endif //MYOS_VMM_H
