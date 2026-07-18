@@ -7,6 +7,7 @@
 // Set the base revision to 6, this is recommended as this is the latest
 // base revision described by the Limine boot protocol specification.
 
+// All of these __attribute__ stuff is to tell the linker where specifically to link these vars
 __attribute__((used, section(".limine_requests")))
 static volatile uint64_t limine_base_revision[] =
 LIMINE_BASE_REVISION(6);
@@ -26,6 +27,12 @@ static volatile struct limine_memmap_request memmap_request = {
 __attribute__((used, section(".limine_requests")))
 static volatile struct limine_hhdm_request hhdm_request = {
     .id = LIMINE_HHDM_REQUEST_ID,
+    .revision = 0
+};
+
+__attribute__((used, section(".limine_requests")))
+static volatile struct limine_executable_address_request exe_addr_request = {
+    .id = LIMINE_EXECUTABLE_ADDRESS_REQUEST_ID,
     .revision = 0
 };
 
@@ -54,18 +61,18 @@ void kmain(void){
     }
 
     struct limine_framebuffer *framebuffer = framebuffer_request.response->framebuffers[0];
+    fb_init(framebuffer);
 
     kprint("Hello from myos!!!\n");
     kprint("MY PRINT FUNCTION WORKSSSS!!!\n");
-
-    kprint("Initializing framebuffer...\n");
-    fb_init(framebuffer);
 
     kprint("Initializing PMM...\n");
     pmm_init(&memmap_request, &hhdm_request);
 
     kprint("Initializing VMM...\n");
-    vmm_init(&hhdm_request);
+    vmm_init(&memmap_request, &hhdm_request, &exe_addr_request);
+
+    kprint("VMM INITIALIZED!\n");
 
     hcf();
 }
