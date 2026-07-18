@@ -2,9 +2,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include "limine.h"
-#include "memory.h"
-#include "framebuffer.h"
-#include "pmm.h"
+#include "include.h"
 
 // Set the base revision to 6, this is recommended as this is the latest
 // base revision described by the Limine boot protocol specification.
@@ -57,12 +55,17 @@ void kmain(void){
 
     struct limine_framebuffer *framebuffer = framebuffer_request.response->framebuffers[0];
 
-    fb_init(framebuffer);
-
-    pmm_init(&memmap_request, &hhdm_request);
-
     kprint("Hello from myos!!!\n");
     kprint("MY PRINT FUNCTION WORKSSSS!!!\n");
+
+    kprint("Initializing framebuffer...\n");
+    fb_init(framebuffer);
+
+    kprint("Initializing PMM...\n");
+    pmm_init(&memmap_request, &hhdm_request);
+
+    kprint("Initializing VMM...\n");
+    vmm_init(&hhdm_request);
 
     hcf();
 }

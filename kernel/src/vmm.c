@@ -2,19 +2,31 @@
 // Created by Rei Trebicka on 6/26/2026.
 //
 
-#include "vmm.h"
-
-#include "framebuffer.h"
-#include "memory.h"
+#include "include.h"
 
 uint64_t hhdm_off;
+
 addr_space_t addr_space;
 
-void vmm_init(uint64_t hhdm_offset){
-    hhdm_off = hhdm_offset;
+void vmm_init(volatile struct limine_memmap_request *memmap_request, volatile struct limine_hhdm_request *hhdm_request){
+    hhdm_off = hhdm_request->response->offset;
+    struct limine_memmap_response *mem_res = memmap_request->response;
 
-    addr_space.pml4 = (uint64_t *)(pmm_alloc() + hhdm_offset);
+    uint64_t pml4_phys = pmm_alloc();
+    addr_space.pml4 = (uint64_t *)(pml4_phys + hhdm_off);
     memset(addr_space.pml4, 0, 4096);
+
+    // Need to point CR3 to PML4 addr
+    kprint("Setting CR3 to PLM4 addr...\n");
+    asm("movq %0, %%cr3": : "r" (pml4_phys): "memory");
+
+    //Map all frames to PML4 tree
+
+    for (uint64_t i = 0; i < mem_res->entry_count; i++) {
+        if (mem_res->entries[i]->type == LIMINE_MEMMAP_USABLE) {
+
+        }
+    }
 }
 
 treeidx_t find_levels(uint64_t va) {
@@ -28,16 +40,16 @@ treeidx_t find_levels(uint64_t va) {
     return levels;
 }
 
-void map_page(uint64_t frame, addr_space_t aspc, uint64_t vaddr, uint64_t flags) {
+void map_page(uint64_t paddr, addr_space_t *aspc, uint64_t vaddr, uint64_t flags) {
     treeidx_t treelvls = find_levels(vaddr);
 
-    uint64_t pdpt_addr = aspc.pml4[treelvls.pml4i];
+    uint64_t pdpt_addr = aspc->pml4[treelvls.pml4i];
     if (pdpt_addr == 0) {
         kprint("PLM4 entry doesn't store a PDPT addr\n");
         kprint("Storing now...\n");
         pdpt_addr = pmm_alloc();
         memset((uint64_t*)(pdpt_addr + hhdm_off), 0, 4096);
-        aspc.pml4[treelvls.pml4i] = pdpt_addr;
+        aspc->pml4[treelvls.pml4i] = pdpt_addr;
         kprint("PDPT addr stored!\n");
     }
     uint64_t *pdpt = (uint64_t *)(pdpt_addr + hhdm_off);
@@ -68,7 +80,8 @@ void map_page(uint64_t frame, addr_space_t aspc, uint64_t vaddr, uint64_t flags)
     if (page_frame == 0) {
         kprint("PT doesn't store a frame\n");
         kprint("Storing now...\n");
-        page_frame = (frame << 12) | (flags | 0x1);
+        page_frame = paddr | (flags | 0x1);
         pt[treelvls.pti] = page_frame;
+        kprint("Frame stored!\n");
     }
 }

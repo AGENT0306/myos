@@ -20,11 +20,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b59c1cb9-c056-494e-8fc5-667f9098a4a7" name="Changes" comment="worked on map_page function">
+    <list default="true" id="b59c1cb9-c056-494e-8fc5-667f9098a4a7" name="Changes" comment="finished implementing map_page function">
       <change afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kernel/src/include.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/bin/myos" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/bin/myos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/obj/src/main.c.d" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/main.c.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/obj/src/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/main.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/obj/src/pmm.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/pmm.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/obj/src/vmm.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/vmm.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/src/pmm.c" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/src/pmm.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel/src/vmm.c" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/src/vmm.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kernel/src/vmm.h" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/src/vmm.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myos.iso" beforeDir="false" afterPath="$PROJECT_DIR$/myos.iso" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,12 +91,12 @@
     &quot;assignee&quot;: &quot;AGENT0306&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/AGENT0306/myos",
-    "accountId": "e46f5c96-9f0b-43f9-a7f1-b656a61cee25"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AGENT0306/myos&quot;,
+    &quot;accountId&quot;: &quot;e46f5c96-9f0b-43f9-a7f1-b656a61cee25&quot;
   }
-}]]></component>
+}</component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="N9RJDJhk" />
   </component>
@@ -96,61 +106,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.4600938253124376" />
-      <entry key="MS500" value="1.8561882845464568" />
-      <entry key="S2" value="1.961927454665344" />
-      <entry key="S5" value="1.984631309554076" />
-      <entry key="S10" value="2.008577301426432" />
-      <entry key="S30" value="3.1213625757561485" />
-      <entry key="S60" value="7.0650744037702164" />
-      <entry key="M2" value="17.27490878645635" />
-      <entry key="M5" value="40.606452733330684" />
-      <entry key="M10" value="62.59179882177458" />
-      <entry key="M15" value="74.65495501262397" />
-      <entry key="M30" value="90.8417905826995" />
-      <entry key="H1" value="101.03247650947625" />
-      <entry key="H2" value="108.00267599518695" />
-      <entry key="H4" value="129.7812938553514" />
-      <entry key="D1" value="316.03201520008787" />
-      <entry key="W1" value="416.1092156715461" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0000000000000018" />
+      <entry key="S10" value="1.0000001134143415" />
+      <entry key="S30" value="1.0206182515890618" />
+      <entry key="S60" value="1.4299839801134315" />
+      <entry key="M2" value="2.966314709604238" />
+      <entry key="M5" value="5.898268591621849" />
+      <entry key="M10" value="7.8907771155381665" />
+      <entry key="M15" value="10.028669488563253" />
+      <entry key="M30" value="20.547411292906144" />
+      <entry key="H1" value="39.51158818659125" />
+      <entry key="H2" value="58.425997363951026" />
+      <entry key="H4" value="73.37870149219063" />
+      <entry key="D1" value="197.96978202794477" />
+      <entry key="W1" value="494.90976093793057" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="1.9144455294541047E-154" />
-      <entry key="S2" value="3.719724314320333E-39" />
-      <entry key="S5" value="4.2482035270425956E-16" />
-      <entry key="S10" value="2.0642636858372298E-8" />
-      <entry key="S30" value="0.0030577638907590635" />
-      <entry key="S60" value="0.07082147426021494" />
-      <entry key="M2" value="0.41720689772928177" />
-      <entry key="M5" value="1.9991667782781837" />
-      <entry key="M10" value="4.196334970586798" />
-      <entry key="M15" value="5.530326598280755" />
-      <entry key="M30" value="7.388921775808874" />
-      <entry key="H1" value="8.582961307237806" />
-      <entry key="H2" value="9.365828403903988" />
-      <entry key="H4" value="11.366439504968243" />
-      <entry key="D1" value="28.0852537017738" />
-      <entry key="W1" value="37.112688687449406" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="4.850591051426205E-283" />
+      <entry key="S10" value="1.0816148249329638E-141" />
+      <entry key="S30" value="2.6995274891317705E-47" />
+      <entry key="S60" value="1.2232970716645817E-23" />
+      <entry key="M2" value="8.583935404542376E-12" />
+      <entry key="M5" value="1.295642306356174E-4" />
+      <entry key="M10" value="0.0375633611360575" />
+      <entry key="M15" value="0.2579322556349718" />
+      <entry key="M30" value="1.810303460439231" />
+      <entry key="H1" value="4.837192328615669" />
+      <entry key="H2" value="7.930489587428916" />
+      <entry key="H4" value="10.424659989588264" />
+      <entry key="D1" value="25.52074890332861" />
+      <entry key="W1" value="54.10236687964051" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9902586708058694" />
-      <entry key="MS500" value="1.6673518384325363" />
-      <entry key="S2" value="1.9069785640823753" />
-      <entry key="S5" value="1.9619539254002216" />
-      <entry key="S10" value="1.996278143339688" />
-      <entry key="S30" value="3.0994199461057486" />
-      <entry key="S60" value="7.087489218364037" />
-      <entry key="M2" value="17.623273240275424" />
-      <entry key="M5" value="42.53126684595303" />
-      <entry key="M10" value="66.72584410268838" />
-      <entry key="M15" value="80.13420943305896" />
-      <entry key="M30" value="98.19867680703511" />
-      <entry key="H1" value="109.59735739180181" />
-      <entry key="H2" value="117.35876172757003" />
-      <entry key="H4" value="141.1417766601463" />
-      <entry key="D1" value="344.1147054803327" />
-      <entry key="W1" value="453.22141668380453" />
+      <entry key="MS100" value="4.834935568761966E-7" />
+      <entry key="MS500" value="0.05456047444586018" />
+      <entry key="S2" value="0.48330304853248657" />
+      <entry key="S5" value="0.7476318831567297" />
+      <entry key="S10" value="0.8646572013516552" />
+      <entry key="S30" value="0.9732187403962258" />
+      <entry key="S60" value="1.4052720371584781" />
+      <entry key="M2" value="2.9526071688456508" />
+      <entry key="M5" value="5.891955937661208" />
+      <entry key="M10" value="7.924521001746934" />
+      <entry key="M15" value="10.282758960083944" />
+      <entry key="M30" value="22.35155450690102" />
+      <entry key="H1" value="44.341655915391" />
+      <entry key="H2" value="66.35087478879144" />
+      <entry key="H4" value="83.79970673895905" />
+      <entry key="D1" value="223.48874880206185" />
+      <entry key="W1" value="549.0115124416068" />
     </decayedShown>
   </component>
   <component name="ProjectApplicationVersion">
@@ -170,42 +180,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Makefile Target.all.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.RadMigrateCodeStyle": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "copilot.chat.legacySessionMetadata.migrated": "true",
-    "git-widget-placeholder": "main",
-    "git.auto.fetch.suggestion.counter": "1",
-    "last_opened_file_path": "//wsl.localhost/Ubuntu/home/agent/Projects/myos",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.first.attach.projects": "true",
-    "settings.editor.selected.configurable": "CPPToolchains",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Makefile Target.all.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git.auto.fetch.suggestion.counter&quot;: &quot;1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/home/agent/Projects/myos&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CPPToolchains&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="all" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
       <makefile filename="$PROJECT_DIR$/GNUmakefile" target="all" workingDirectory="" arguments="">
         <envs />
@@ -235,7 +240,9 @@
       <workItem from="1782496387202" duration="1519000" />
       <workItem from="1782667907105" duration="1755000" />
       <workItem from="1782671088321" duration="378000" />
-      <workItem from="1783110519131" duration="8427000" />
+      <workItem from="1783110519131" duration="10711000" />
+      <workItem from="1784140734623" duration="6257000" />
+      <workItem from="1784390905996" duration="6150000" />
     </task>
     <task id="LOCAL-00001" summary="added vmm files as well as update obj files">
       <option name="closed" value="true" />
@@ -309,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1783117391456</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="finished implementing map_page function">
+      <option name="closed" value="true" />
+      <created>1783173397018</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1783173397018</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +337,7 @@
     <MESSAGE value="updated .idea" />
     <MESSAGE value="added page tree index finding as well as created the treeidx type in vmm.h" />
     <MESSAGE value="worked on map_page function" />
-    <option name="LAST_COMMIT_MESSAGE" value="worked on map_page function" />
+    <MESSAGE value="finished implementing map_page function" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished implementing map_page function" />
   </component>
 </project>

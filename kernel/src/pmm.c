@@ -1,11 +1,7 @@
 //
 // Created by reit on 6/12/26.
 //
-#include "pmm.h"
-
-#include "limine.h"
-#include "framebuffer.h"
-#include "memory.h"
+#include "include.h"
 
 typedef struct pmm{
     uint8_t* bitmap;
