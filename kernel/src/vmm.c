@@ -16,17 +16,27 @@ void vmm_init(volatile struct limine_memmap_request *memmap_request, volatile st
     addr_space.pml4 = (uint64_t *)(pml4_phys + hhdm_off);
     memset(addr_space.pml4, 0, 4096);
 
+    //Map all frames to PML4 tree
+    for (uint64_t i = 0; i < mem_res->entry_count; i++) {
+        if (mem_res->entries[i]->type == LIMINE_MEMMAP_USABLE) {
+            uint64_t ebase = mem_res->entries[i]->base;
+            uint64_t elength = mem_res->entries[i]->length;
+
+            // Remember entries from limine represent CHUNKS of physical memory (one entry could be multiple frames)
+            uint64_t start_frame = ebase / 4096;
+            uint64_t end_frame = (ebase + elength) / 4096;
+
+            for (uint64_t j = start_frame; j < end_frame; j++) {
+                uint64_t paddr = j * 4096;
+                map_page(paddr, &addr_space, paddr + hhdm_off, 0x2);
+            }
+        }
+
+    }
+
     // Need to point CR3 to PML4 addr
     kprint("Setting CR3 to PLM4 addr...\n");
     asm("movq %0, %%cr3": : "r" (pml4_phys): "memory");
-
-    //Map all frames to PML4 tree
-
-    for (uint64_t i = 0; i < mem_res->entry_count; i++) {
-        if (mem_res->entries[i]->type == LIMINE_MEMMAP_USABLE) {
-
-        }
-    }
 }
 
 treeidx_t find_levels(uint64_t va) {
