@@ -11,5 +11,7 @@
 #include "memory.h"
 #include "framebuffer.h"
 #include "font8x8_basic.h"
+#include "gdt.h"
+#include "idt.h"
 
 #endif //MYOS_INCLUDE_H
