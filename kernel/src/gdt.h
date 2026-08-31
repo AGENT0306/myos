@@ -15,8 +15,7 @@ typedef struct gdt_entry {
     uint8_t access;
     // becuase limit_high and flags are only 4 bits need to make sure packed removes the extra
     // four bits from each of these attrs.
-    uint8_t limit_high;
-    uint8_t flags;
+    uint8_t limit_high_flags;
     uint8_t base_three;
     uint32_t base_four; 
 } __attribute__((packed)) gdt_entry_t;
@@ -35,5 +34,8 @@ typedef struct tss_descriptor {
     uint32_t base_upper;
     uint32_t reserved;
 } __attribute__((packed)) tss_descriptor_t;
+
+void gdt_init();
+void encodeGdtEntry(gdt_entry_t * entry, uint64_t base, uint32_t limit /* is only 20 bits not 32 */, uint8_t accs, uint8_t flg);
 
 #endif //MYOS_GDT_H
