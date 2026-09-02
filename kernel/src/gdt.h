@@ -35,6 +35,13 @@ typedef struct tss_descriptor {
     uint32_t reserved;
 } __attribute__((packed)) tss_descriptor_t;
 
+typedef struct gdt_entry_info{
+  uint64_t b; //base
+  uint32_t l; //limit
+  uint8_t f;  //flags
+  uint8_t a;  //access
+} gdt_entry_info_t;
+
 void gdt_init();
 void encodeGdtEntry(gdt_entry_t * entry, uint64_t base, uint32_t limit /* is only 20 bits not 32 */, uint8_t accs, uint8_t flg);
 

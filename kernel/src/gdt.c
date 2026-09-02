@@ -5,7 +5,11 @@
 #include "include.h"
 
 void gdt_init(){
-
+    //Here we will init each of the six entrys for the gdt
+    
+    for(int i = 0; i < 5; i++){
+      
+    }
 }
 
 

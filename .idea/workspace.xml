@@ -20,21 +20,22 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b59c1cb9-c056-494e-8fc5-667f9098a4a7" name="Changes" comment="finished implementing map_page function">
-      <change afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kernel/src/include.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b59c1cb9-c056-494e-8fc5-667f9098a4a7" name="Changes" comment="updated GDT files format">
+      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/bin/myos" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/bin/myos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/obj/src/main.c.d" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/main.c.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/obj/src/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/main.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/obj/src/pmm.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/pmm.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/obj/src/vmm.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/obj/src/vmm.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/src/pmm.c" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/src/pmm.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/src/vmm.c" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/src/vmm.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernel/src/vmm.h" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/src/vmm.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myos.iso" beforeDir="false" afterPath="$PROJECT_DIR$/myos.iso" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/bin/myos" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/obj/src/font8x8_basic.c.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/obj/src/font8x8_basic.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/obj/src/framebuffer.c.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/obj/src/framebuffer.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/obj/src/main.c.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/obj/src/main.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/obj/src/memory.c.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/obj/src/memory.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/obj/src/pmm.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/obj/src/vmm.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myos.iso" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,12 +92,12 @@
     &quot;assignee&quot;: &quot;AGENT0306&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/AGENT0306/myos&quot;,
-    &quot;accountId&quot;: &quot;e46f5c96-9f0b-43f9-a7f1-b656a61cee25&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/AGENT0306/myos",
+    "accountId": "a1af82d4-2f2b-436d-b73d-5ba8fccd0105"
   }
-}</component>
+}]]></component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="N9RJDJhk" />
   </component>
@@ -182,6 +183,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;CidrDebugProfileConversion&quot;: &quot;true&quot;,
     &quot;Makefile Target.all.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
@@ -211,6 +213,11 @@
   }
 }</component>
   <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="all" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
       <makefile filename="$PROJECT_DIR$/GNUmakefile" target="all" workingDirectory="" arguments="">
         <envs />
@@ -229,6 +236,10 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SelectedDebugProfileService">{
+  &quot;profileIdByStamp&quot;: [],
+  &quot;modificationCount&quot;: 1
+}</component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="b59c1cb9-c056-494e-8fc5-667f9098a4a7" name="Changes" comment="" />
@@ -330,6 +341,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added vmm files as well as update obj files" />
     <MESSAGE value="cleaning up repo" />
@@ -338,6 +360,7 @@
     <MESSAGE value="added page tree index finding as well as created the treeidx type in vmm.h" />
     <MESSAGE value="worked on map_page function" />
     <MESSAGE value="finished implementing map_page function" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished implementing map_page function" />
+    <MESSAGE value="updated GDT files format" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated GDT files format" />
   </component>
 </project>
