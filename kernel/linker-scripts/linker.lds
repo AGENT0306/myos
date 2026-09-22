@@ -21,28 +21,34 @@ SECTIONS{
     . = ALIGN(CONSTANT(MAXPAGESIZE));
 
     .text : {
+        text_start = .;
         *(.text .text.*)
+        text_end = .;
     }:text
 
     . = ALIGN(CONSTANT(MAXPAGESIZE));
 
     .rodata : {
+        rodata_start = .;
         *(.rodata .rodata.*)
     }:rodata
 
     .note.gnu.build-id : {
         *(.note.gnu.build-id)
+        rodata_end = .;
     } :rodata
 
     . = ALIGN(CONSTANT(MAXPAGESIZE));
 
     .data : {
+        data_start = .;
         *(.data .data.*)
     } :data
 
     .bss : {
         *(.bss .bss.*)
         *(COMMON)
+        data_end = .;
     } :data
 
     /DISCARD/ : {
